@@ -21,7 +21,7 @@
 											 </a>
 												 <ul id="menu-academico-sub" >
 												    <li id="menu-academico-avaliacoes" ><a href="create-club.php">Create Club</a></li>
-													<li id="menu-academico-avaliacoes" ><a href="#">Manage Club</a></li>
+													<li id="menu-academico-avaliacoes" ><a href="manage-clubs.php">Manage Club</a></li>
 												 </ul>
 										</li>
 										<li id="menu-academico" ><a href="#">

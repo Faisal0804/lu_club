@@ -65,11 +65,16 @@
 
 							  $clubname=$_POST['club_name'];
 							  $clubtitle=$_POST['club_title'];
+							  $file=$_FILES['image']['name'];
+							  $temp_file=$_FILES['image']['tmp_name'];
+							  $main_image="images/".$file;
+
+							  move_uploaded_file($temp_file,$main_image);
 
 							  if(empty($clubname) || empty( $clubtitle)){
 								echo "field must not be empty";
 							  }else{
-								$insert_query="insert into clublist(club_name,club_title) values('$clubname','$clubtitle')";
+								$insert_query="insert into clublist(club_name,club_title,image) values('$clubname','$clubtitle','$main_image')";
 								$insert_club=$db->insert($insert_query);
 								if($insert_club){
 									echo "<script>alert('insert success')</script>";
@@ -104,6 +109,13 @@
 									<label for="focusedinput" class="col-sm-2 control-label">Club Title</label>
 									<div class="col-sm-8">
 										<input type="text" class="form-control1" name="club_title"                                        placeholder="Create club" required>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="focusedinput" class="col-sm-2 control-label">Club Title</label>
+									<div class="col-sm-8">
+										<input type="file" class="form-control1" name="image"  placeholder="Create club" >
 									</div>
 								</div>
 
