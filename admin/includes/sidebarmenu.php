@@ -23,7 +23,32 @@
 												    <li id="menu-academico-avaliacoes" ><a href="create-club.php">Create Club</a></li>
 													<li id="menu-academico-avaliacoes" ><a href="manage-clubs.php">Manage Club</a></li>
 												 </ul>
-										</li>
+										 </li>
+
+										 <li id="menu-academico" >
+											<a href="#">
+											 <i class="fa fa-list-ul" aria-hidden="true"></i>
+												<span> LUCC</span> 
+												<span class="fa fa-angle-right" style="float: right">
+												</span>
+											 <div class="clearfix"></div>
+											 </a>
+												 <ul id="menu-academico-sub" >
+												    <li id="menu-academico-avaliacoes" ><a href="addluccpost.php">club post</a></li>
+													<li id="menu-academico-avaliacoes" ><a href="#">Manage manage post</a></li>
+													<li id="menu-academico-avaliacoes" ><a href="#">club event</a></li>
+													<li id="menu-academico-avaliacoes" ><a href="#">mange event</a></li>
+													<li id="menu-academico-avaliacoes" ><a href="#">club activities</a></li>
+													<li id="menu-academico-avaliacoes" ><a href="#">manage activities</a></li>
+													<li id="menu-academico-avaliacoes" ><a href="#">club team</a></li>
+													<li id="menu-academico-avaliacoes" ><a href="#">maange team</a></li>
+												 </ul>
+										 </li>
+
+
+
+
+
 										<li id="menu-academico" ><a href="#">
 											<i class="fa fa-users" aria-hidden="true"></i>
 											<span>Manage Users</span><div class="clearfix"></div></a>
