@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2024 at 09:34 AM
+-- Generation Time: Jan 13, 2024 at 09:42 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -48,6 +48,30 @@ INSERT INTO `clublist` (`id`, `club_name`, `club_title`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `club_event`
+--
+
+CREATE TABLE `club_event` (
+  `id` int(11) NOT NULL,
+  `club_id` int(11) DEFAULT NULL,
+  `event_title` varchar(255) DEFAULT NULL,
+  `event_image` varchar(255) DEFAULT NULL,
+  `event_date` date DEFAULT NULL,
+  `event_time` time DEFAULT NULL,
+  `event_description` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `club_event`
+--
+
+INSERT INTO `club_event` (`id`, `club_id`, `event_title`, `event_image`, `event_date`, `event_time`, `event_description`) VALUES
+(1, 1, 'Hoodie Registration', 'images/event1.jpg', '2024-01-13', '16:09:00', '\r\n         Leading University has launched it\'s 1st institutional HOODIE. Leading University Computer Club is proud to announce that we’ll be in charge of the Leading University Hoodie campaign by the direction of Leading University Authority. Whether you are currently studying at Leading University or an Ex student, pre-book the hoodie right now so that the memories of our university lives with you every winter.                               '),
+(2, 1, 'Picnic', 'images/event2.jpg', '2024-01-10', '09:00:00', '\r\n                                  Leading University Computer Club is going to organize the \"CSE Department Annual Picnic\" for the very first time as titled \"Hello World to Real World\". We haven\'t organized any picnic event since then 2019 as that time we were going through a pandemic situation. Therefore, in the days to come, on 3rd December 2022, the event will be arranged.      ');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `club_pst`
 --
 
@@ -76,6 +100,13 @@ ALTER TABLE `clublist`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `club_event`
+--
+ALTER TABLE `club_event`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `club_id` (`club_id`);
+
+--
 -- Indexes for table `club_pst`
 --
 ALTER TABLE `club_pst`
@@ -93,6 +124,12 @@ ALTER TABLE `clublist`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `club_event`
+--
+ALTER TABLE `club_event`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `club_pst`
 --
 ALTER TABLE `club_pst`
@@ -101,6 +138,12 @@ ALTER TABLE `club_pst`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `club_event`
+--
+ALTER TABLE `club_event`
+  ADD CONSTRAINT `club_event_ibfk_1` FOREIGN KEY (`club_id`) REFERENCES `clublist` (`id`);
 
 --
 -- Constraints for table `club_pst`

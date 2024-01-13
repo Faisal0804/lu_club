@@ -36,7 +36,7 @@
 												 <ul id="menu-academico-sub" >
 												    <li id="menu-academico-avaliacoes" ><a href="addluccpost.php">club post</a></li>
 													<li id="menu-academico-avaliacoes" ><a href="#">Manage manage post</a></li>
-													<li id="menu-academico-avaliacoes" ><a href="#">club event</a></li>
+													<li id="menu-academico-avaliacoes" ><a href="addclubevent.php">club event</a></li>
 													<li id="menu-academico-avaliacoes" ><a href="#">mange event</a></li>
 													<li id="menu-academico-avaliacoes" ><a href="#">club activities</a></li>
 													<li id="menu-academico-avaliacoes" ><a href="#">manage activities</a></li>
