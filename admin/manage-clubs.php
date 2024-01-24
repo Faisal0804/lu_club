@@ -71,27 +71,9 @@
             </ol>
 <div class="agile-grids">	
 				<!-- tables -->
-				<?php 
-				  //take reference key for delete
-				 if(isset($_GET['deleteclubid'])){
-					$deleteclubid=$_GET['deleteclubid'];
-				 }
 				
-				?>
 
-				<?php
-				  //php for club delete
-				  $delete_query="delete from clublist where id='$deleteclubid' ";
-				  $delete_club=$db->delete($delete_query);
-				  if($delete_club){
-					echo "<script>alert('club delete success!')</script>";
-
-				  }else{
-					echo "<script>alert('something went wrong!')</script>";
-				  }
 				
-				
-				?>
 				
 				<div class="agile-tables">
 					<div class="w3l-table-info">
@@ -127,9 +109,9 @@
 							<td><?php echo $result_club['club_title']; ?></td>
 							<td><img height="100px" width="100px" src="<?php echo $result_club['image'];?>" alt=""/></td>
 							<td>
-								<a href=""><button type="button" class="btn btn-primary ">Edit</button></a>
+								<a href="editclub.php?editclubid=<?php echo $result_club['id'] ;?>"><button type="button" class="btn btn-primary ">Edit</button></a>
 								               ||
-								<a href="?deleteclubid=<?php echo $result_club['id'] ;?>"><button onclick="alert('are you sure to delete!')" type="submit" class="btn  btn-danger">Delete</button></a>
+								<a href="deleteclub.php?deleteclubid=<?php echo $result_club['id'] ;?>"><button onclick="alert('are you sure to delete!')" type="submit" class="btn  btn-danger">Delete</button></a>
 						    </td>
 						  </tr>
 						  <?php }} ?>
