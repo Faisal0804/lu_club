@@ -64,7 +64,7 @@
 						  if(isset($_POST['submit'])){
 
 							 $clubid=$_POST['club_id'];
-							  $desccription=$_POST['desccription'];
+							  $desccription=mysqli_escape_string($db->link,$_POST['desccription']);
 							  $file=$_FILES['image']['name'];
 							  $temp_file=$_FILES['image']['tmp_name'];
 							  $main_image="images/".$file;
