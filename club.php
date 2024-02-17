@@ -1,5 +1,7 @@
 <?php include "lib/database.php"?>
 <?php  $db= new database();?>
+<?php include "helper/format.php"?>
+<?php $fm= new Format();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,49 +90,43 @@
                 <h4>Our Events</h4>
             </div>
             <div class="events">
+
+            <?php 
+						//select club
+
+					
+						$select_query="select club_event.*, clublist.*
+                         from club_event
+                         inner join clublist on club_event.club_id=clublist.id
+                         where clublist.id='$club_id'
+                         order by club_event.id desc limit 3
+                         ";
+					    $read_club_event=$db->select($select_query);
+						if($read_club_event){
+							$i=0;
+							while($result_club_event=$read_club_event->fetch_assoc()){			
+								$i++;
+
+			?>
+
+
                 <div class="single-event">
-                    <h4>Hoodie Registration</h4>
-                    <img src="assets/img/lucc/events/event1.jpg" alt="">
+                    <h4><?php echo $result_club_event['event_title']; ?></h4>
+                    <img src="admin/<?php echo $result_club_event['event_image'];?>" alt="">
                     <div class="event-meta">
                         <span><i class="fa-solid fa-location-dot"></i>Leading University</span>
-                        <span><i class="fa-solid fa-calendar-days"></i>2th - 10th December, 2022</span>
-                        <span><i class="fa-solid fa-clock"></i>11:00 AM - 2:00 PM</span>
+                        <span><i class="fa-solid fa-calendar-days"></i><?php echo $result_club_event['event_date'];?> - <?php echo $result_club_event['event_date'];?> </span>
+                        <span><i class="fa-solid fa-clock"></i><?php echo $fm->formattime
+                        ($result_club_event['event_time']);?> </span>
                     </div>
                     <div class="event-content">
-                        <p>Leading University has launched it's 1st institutional HOODIE.
-                            Leading University Computer Club is proud to announce that we’ll be in charge of the Leading University Hoodie campaign by the direction of Leading University Authority.
-                            Whether you are currently studying at Leading University or an Ex student, pre-book the hoodie right now so that the memories of our university lives with you every winter.</p>
+                        <p><?php echo $result_club_event['event_description'];?></p>
                         <a href="" class="btn">More Details</a>
                     </div>
                 </div>
-                <div class="single-event">
-                    <h4>Picnic</h4>
-                    <img src="assets/img/lucc/events/event2.jpg" alt="">
-                    <div class="event-meta">
-                        <span><i class="fa-solid fa-location-dot"></i>Leading University</span>
-                        <span><i class="fa-solid fa-calendar-days"></i>18th October, 2022</span>
-                        <span><i class="fa-solid fa-clock"></i>11:00 AM</span>
-                    </div>
-                    <div class="event-content">
-                        <p>Leading University Computer Club is going to organize the "CSE Department Annual Picnic" for the very first time as titled "Hello World to Real World".
-                            We haven't organized any picnic event since then 2019 as that time we were going through a pandemic situation. Therefore, in the days to come, on 3rd December 2022, the event will be arranged.</p>
-                        <a href="" class="btn">More Details</a>
-                    </div>
-                </div>
-                <div class="single-event">
-                    <h4>Bit Fest</h4>
-                    <img src="assets/img/lucc/events/event3.jpg" alt="">
-                    <div class="event-meta">
-                        <span><i class="fa-solid fa-location-dot"></i>Leading University</span>
-                        <span><i class="fa-solid fa-calendar-days"></i>8th June, 2023</span>
-                        <span><i class="fa-solid fa-clock"></i>12:00 PM</span>
-                    </div>
-                    <div class="event-content">
-                        <p>The leading University Computer Club is going to arrange “Bit Fest” at the Leading University. Participants in the event include students from the Leading University as well as programmers, developers, and game players. The program will last for two days on our home campus. Over 700 programmers, developers, gamers, and students from all over the Sylhet city will attend this event.
-                        </p>
-                        <a href="" class="btn">More Details</a>
-                    </div>
-                </div>
+                <?php }}?>
+               
+                
             </div>
         </div>
     </section>
