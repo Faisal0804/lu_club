@@ -49,10 +49,19 @@
 
 
 
-										<li id="menu-academico" ><a href="#">
-											<i class="fa fa-users" aria-hidden="true"></i>
-											<span>Manage Users</span><div class="clearfix"></div></a>
-										</li>
+										 <li id="menu-academico" >
+											<a href="#">
+											 <i class="fa fa-list-ul" aria-hidden="true"></i>
+												<span> manage use</span> 
+												<span class="fa fa-angle-right" style="float: right">
+												</span>
+											 <div class="clearfix"></div>
+											 </a>
+												 <ul id="menu-academico-sub" >
+												    <li id="menu-academico-avaliacoes" ><a href="userlist.php">user list</a></li>
+													
+												 </ul>
+										 </li>
 										
 										<li>
 											<a href="#"><i class="fa fa-list" aria-hidden="true"></i> 
