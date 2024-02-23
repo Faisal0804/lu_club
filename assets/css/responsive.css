@@ -1,0 +1,28 @@
+/* Medium Layout */
+@media only screen and (min-width:992px) and (max-width:1170px){
+    .container{
+        width: 970px;
+    }
+    .about-content {
+        flex-basis: 47%;
+    }
+    .about-content h1 {
+        font-size: 47px;
+    }
+    .services-area {
+        padding-bottom: 380px;
+    }
+    .single-service-overlay {
+        bottom: -330px;
+    }
+    .another.about {
+        flex-direction: column;
+        text-align: center;
+    }
+    .another.about-img img {
+        width: 23%;
+    }
+    .another.about-area {
+        padding-bottom: 0;
+    }
+}

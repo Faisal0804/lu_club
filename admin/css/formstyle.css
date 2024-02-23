@@ -1,0 +1,128 @@
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.container{
+  width: 1170px;
+  margin: 0 auto;
+}
+
+/* Form */
+.form-area {
+    padding: 100px 0;
+  }
+  .form-area h4 {
+    text-align: center;
+    font-size: 40px;
+    color: #0a3e2d;
+  }
+  .sign-up-form {
+    background-color:#0a3e2d;
+    color: #fff;
+    padding: 30px;
+    margin: 0 150px;
+    border-radius: 20px;
+  }
+  .first-input {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+  }
+  .single-input {
+    display: flex;
+    flex-direction: column;
+  }
+  .first-input .single-input {
+    flex-basis: 48%;
+  }
+  .single-input label {
+    font-weight: 600;
+    margin-top: 30px;
+  }
+  .single-input input, .single-input textarea, .single-input select {
+    padding: 20px;
+    margin-top: 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+  .btn {
+    display: inline-block;
+    text-align: center;
+    padding: 20px 60px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: 25px 300px 0;
+    transition: .3s;
+  }
+  .btn:hover {
+    border-color: #fff;
+    background-color: #0a3e2d;
+    color: #fff;
+  }
+  span {
+    display: block;
+    color: #fff;
+    margin-top: 5px;
+  }
+
+  
+  .admin-area {
+    height: 100vh;
+    background-color: #19594D;
+  }
+
+.admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 140px;
+}
+.single-admin {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 50px 100px;
+  text-align: center;
+  transition: .3s;
+}
+
+.single-admin i {
+  width: 90px;
+  height: 90px;
+  background-color: #19594d;
+  line-height: 90px;
+  color: #fff;
+  font-size: 40px;
+  border-radius: 50%;
+}
+.single-admin a {
+  text-decoration: none;
+  color: #19594d;
+  font-size: 40px;
+  transition: .3s;
+}
+.single-admin:last-child {
+  margin-left: 80px;
+}
+
+
+.form-area h5 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 22px;
+  text-transform: capitalize;
+  color: #0a3e2d;
+}
+.form-area h5 a {
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 10px;
+  color: #316f5a;
+  transition: .3s;
+}
+.form-area h5 a:hover {
+  text-decoration: underline;
+}
